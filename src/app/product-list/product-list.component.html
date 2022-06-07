@@ -1,0 +1,53 @@
+<h2>Products</h2>
+<div *ngFor="let product of products">
+  <div *ngIf="product.name">
+    {{ product.name }}
+    <div *ngIf="product.inputTypeCode == 'Boolean'">
+      <div class="custom-control custom-switch">
+        <input
+          type="checkbox"
+          class="custom-control-input"
+          id="customSwitch1"
+          checked
+        />
+      </div>
+    </div>
+    <div *ngIf="product.inputTypeCode == 'SingleSelectMenu'">
+    <div class="select" id="product.variableName">
+      <ul style="width:150px;">
+      <li values="1" class="option">Dropdown one</li>
+      <li values="2" class="option">Dropdown two</li>
+      <li values="3" class="option">Dropdown three</li>
+      <ul>
+  </div>
+  <!--
+      <select id="product.variableName">
+        <option value="opt.value" *ngFor="let opt of product.options">
+          {{ opt.displayValue }}
+        </option>
+      </select>
+      -->
+    </div>
+  </div>
+</div>
+
+<!--
+<div *ngFor="let product of products">
+  <h3>
+    <a
+      [title]="product.name + 'details.'"
+     
+      >{{ product.name }}</a
+    >
+    <p *ngIf="product.description">Description: {{ product.description }}</p>
+  </h3>
+  <button type="button" (click)="share()">Share</button>
+  <app-product-alerts [product]="product"></app-product-alerts>
+
+</div>
+-->
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+-->
